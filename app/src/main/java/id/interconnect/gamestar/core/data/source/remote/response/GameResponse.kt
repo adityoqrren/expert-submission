@@ -9,7 +9,7 @@ data class GameResponse(
     val updated: String,
     val rating: Double,
     val playtime: Int,
-    val platforms: List<Platform>,
+    val platforms: List<PlatformOuter>,
     val developers: List<Developer>,
     val genres: List<Genre>,
     val esrb_rating: EsrbRating,

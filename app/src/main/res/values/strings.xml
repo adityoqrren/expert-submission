@@ -2,4 +2,13 @@
     <string name="app_name">GameStar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_home">Home</string>
+    <string name="fragment_favorite">Favorite</string>
+    <string name="image_description">Image of game</string>
+    <string name="menu_favorite_desc">Favorite button</string>
+    <string name="example_lorem">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec leo sem, vehicula et egestas et, ullamcorper a nibh. Etiam iaculis ligula sed sem euismod, ac blandit ante egestas. Aliquam consectetur iaculis posuere. Donec semper maximus turpis vel tincidunt. Praesent vel vehicula est. Pellentesque tincidunt dolor quis erat placerat, sit amet consequat lectus pharetra. Donec aliquam dignissim lectus.
+    </string>
+    <string name="tambah_fav_game">Game added to favorite</string>
+    <string name="hapus_fav_game">Game removed from favorite</string>
 </resources>

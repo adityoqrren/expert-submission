@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="id.interconnect.gamestar.home.HomeFragment"
+        android:label="@string/fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="id.interconnect.gamestar.favorite.FavoriteFragment"
+        android:label="@string/fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_nav_favorite_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="id.interconnect.gamestar.detail.DetailActivity"
+        android:label="activity_detail"
+        tools:layout="@layout/activity_detail" >
+        <argument
+            android:name="gameId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </activity>
+</navigation>

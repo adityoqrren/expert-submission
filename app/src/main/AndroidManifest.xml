@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.interconnect.gamestar">
-    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".MyApplication"
@@ -11,7 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GameStar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".detail.DetailActivity"
+            android:theme="@style/Theme.GameStar.NoActionBar"/>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.GameStar.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,5 +22,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

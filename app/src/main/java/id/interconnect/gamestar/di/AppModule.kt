@@ -2,6 +2,7 @@ package id.interconnect.gamestar.di
 
 import id.interconnect.gamestar.core.domain.usecase.GameInteractor
 import id.interconnect.gamestar.core.domain.usecase.GameUseCase
+import id.interconnect.gamestar.detail.DetailViewModel
 import id.interconnect.gamestar.favorite.FavoriteViewModel
 import id.interconnect.gamestar.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -17,4 +18,5 @@ val useCaseModule = module {
 val viewModelModule = module{
    viewModel { HomeViewModel(get()) }
    viewModel { FavoriteViewModel(get()) }
+    viewModel { DetailViewModel(get()) }
 }

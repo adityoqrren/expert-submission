@@ -44,14 +44,14 @@ class GameRepository(
             }
 
             override fun shouldFetch(data: Game?): Boolean =
-                data == null
+                data?.developers.isNullOrEmpty() || data?.released.isNullOrEmpty()
 
             override suspend fun createCall(): Flow<ApiResponse<GameResponse>> =
                 remoteDataSource.getDetailGame(id)
 
             override suspend fun saveCallResult(data: GameResponse) {
                 val gameEntity = DataMapper.mapResponseToEntityDetail(data)
-                localDataSource.updateGame(gameEntity)
+                appExecutors.diskIO().execute { localDataSource.updateGame(gameEntity) }
             }
 
         }.asFlow()

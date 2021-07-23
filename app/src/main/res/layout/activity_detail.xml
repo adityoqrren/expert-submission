@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".detail.DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/detail_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.GameStar.AppBarOverlay">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <ImageView
+                android:id="@+id/iv_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/image_description"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/Theme.GameStar.PopupOverlay" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include android:id="@+id/detail_content" layout="@layout/content_detail"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
+        android:id="@+id/favorite_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:tint="@null"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/menu_favorite_desc"
+        app:layout_anchor="@id/detail_app_bar"
+        app:layout_anchorGravity="bottom|end" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

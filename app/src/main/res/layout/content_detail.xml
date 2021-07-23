@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_detail">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp">
+
+    <TextView
+        android:id="@+id/description_raw_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/example_lorem"
+        app:layout_constraintStart_toStartOf="@id/description_raw_text"
+        app:layout_constraintTop_toBottomOf="@id/description_raw_text" />
+
+    <TextView
+        android:id="@+id/genre_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Genre"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description" />
+
+    <TextView
+        android:id="@+id/genre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Action, Arcade, Fun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/genre_text"
+        app:layout_constraintTop_toBottomOf="@id/genre_text" />
+
+    <TextView
+        android:id="@+id/developers_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Developers"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/genre" />
+
+    <TextView
+        android:id="@+id/developers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Company 1, Company 2, Company 3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/developers_text"
+        app:layout_constraintTop_toBottomOf="@id/developers_text" />
+
+    <TextView
+        android:id="@+id/parent_platforms_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Platforms"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/developers" />
+
+    <TextView
+        android:id="@+id/parent_platforms"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Platform 1, platform2, platform 3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/parent_platforms_text"
+        app:layout_constraintTop_toBottomOf="@id/parent_platforms_text" />
+
+    <TextView
+        android:id="@+id/released_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Released"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/parent_platforms" />
+
+    <TextView
+        android:id="@+id/released"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0000-00-00"
+        app:layout_constraintStart_toStartOf="@id/released_text"
+        app:layout_constraintTop_toBottomOf="@id/released_text" />
+
+    <TextView
+        android:id="@+id/updated_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Updated"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/released_text" />
+
+    <TextView
+        android:id="@+id/updated"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0000-00-00\n00:00:00"
+        app:layout_constraintStart_toStartOf="@+id/updated_text"
+        app:layout_constraintTop_toBottomOf="@+id/updated_text" />
+
+    <TextView
+        android:id="@+id/rating_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Rating"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updated" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="5.0"
+        app:layout_constraintStart_toStartOf="@+id/rating_text"
+        app:layout_constraintTop_toBottomOf="@+id/rating_text" />
+
+    <TextView
+        android:id="@+id/playtime_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Average Playtime"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/rating_text" />
+
+    <TextView
+        android:id="@+id/playtime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0 hour"
+        app:layout_constraintStart_toStartOf="@+id/playtime_text"
+        app:layout_constraintTop_toBottomOf="@+id/playtime_text" />
+
+    <TextView
+        android:id="@+id/tba_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TBA"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playtime" />
+
+    <TextView
+        android:id="@+id/tba"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="No"
+        app:layout_constraintStart_toStartOf="@+id/tba_text"
+        app:layout_constraintTop_toBottomOf="@+id/tba_text" />
+
+    <TextView
+        android:id="@+id/age_rating_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age Rating"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/tba_text" />
+
+    <TextView
+        android:id="@+id/age_rating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Mature"
+        app:layout_constraintStart_toStartOf="@+id/age_rating_text"
+        app:layout_constraintTop_toBottomOf="@+id/age_rating_text" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/updated_text"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="30dp"-->
+    <!--        android:text="Updated"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/released_text"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/released_text" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/updated"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="0000-00-00\n00:00:00"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/updated_text"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/updated_text" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/released"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="released" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

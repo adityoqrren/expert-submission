@@ -13,7 +13,7 @@ data class Game(
     val updated: String,
     val rating: Double,
     val playtime: Int,
-    val platforms: String,
+    val parent_platforms: String,
     val developers: String,
     val genres: String,
     val esrb_rating: String,

@@ -5,5 +5,5 @@ data class GameItemResponse (
     val name: String,
     val background_image: String,
     val rating: Double,
-    val platforms: List<Platform>
+    val parent_platforms: List<PlatformOuter>
 )

@@ -1,5 +1,6 @@
 package id.interconnect.gamestar.core.utils
 
+import android.util.Log
 import id.interconnect.gamestar.core.data.source.local.entity.GameItemEntity
 import id.interconnect.gamestar.core.data.source.remote.response.*
 import id.interconnect.gamestar.core.domain.model.Game
@@ -13,8 +14,9 @@ object DataMapper {
                 name_original = it.name,
                 background_image = it.background_image,
                 rating = it.rating,
-                platforms = Converter.platformToString(it.platforms)
+                parent_platforms = Converter.platformToString(it.parent_platforms)
             )
+            Log.d("lihat di datamapper",it.parent_platforms.toString())
             gameItemEntityList.add(gameItemEntity)
         }
         return gameItemEntityList
@@ -26,7 +28,7 @@ object DataMapper {
             name_original = input.name_original,
             background_image = input.background_image,
             rating = input.rating,
-            platforms = Converter.platformToString(input.platforms),
+            parent_platforms = Converter.platformToString(input.platforms),
             released = input.released,
             tba = input.tba,
             updated = input.updated,
@@ -49,7 +51,7 @@ object DataMapper {
                 updated = it.updated,
                 rating = it.rating,
                 playtime = it.playtime,
-                platforms = it.platforms,
+                parent_platforms = it.parent_platforms,
                 developers = it.developers,
                 genres = it.genres,
                 esrb_rating = it.esrb_rating,
@@ -68,7 +70,7 @@ object DataMapper {
             updated = input.updated,
             rating = input.rating,
             playtime = input.playtime,
-            platforms = input.platforms,
+            parent_platforms = input.parent_platforms,
             developers = input.developers,
             genres = input.genres,
             esrb_rating = input.esrb_rating,
@@ -86,7 +88,7 @@ object DataMapper {
             updated = input.updated,
             rating = input.rating,
             playtime = input.playtime,
-            platforms = input.platforms,
+            parent_platforms = input.parent_platforms,
             developers = input.developers,
             genres = input.genres,
             esrb_rating = input.esrb_rating,

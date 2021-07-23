@@ -19,34 +19,34 @@ data class GameItemEntity(
     var background_image: String,
 
     @ColumnInfo(name = "released")
-    var released: String = "",
+    var released: String = "", //sudah
 
     @ColumnInfo(name = "tba")
-    var tba: Boolean = false,
+    var tba: Boolean = false, //sudah
 
     @ColumnInfo(name = "updated")
-    var updated: String = "",
+    var updated: String = "", //sudah
 
     @ColumnInfo(name = "rating")
-    var rating: Double = 0.0,
+    var rating: Double = 0.0, //sudah
 
     @ColumnInfo(name = "playtime")
-    var playtime: Int = 0,
+    var playtime: Int = 0, //sudah
 
     @ColumnInfo(name = "platforms")
-    var platforms: String,
+    var parent_platforms: String, //sudah
 
     @ColumnInfo(name = "developers")
-    var developers: String = "",
+    var developers: String = "", //sudah
 
     @ColumnInfo(name = "genres")
-    var genres: String = "",
+    var genres: String = "", //sudah
 
     @ColumnInfo(name = "esrb_rating")
-    var esrb_rating: String = "",
+    var esrb_rating: String = "", //sudah
 
     @ColumnInfo(name = "description_raw")
-    var description_raw: String = "",
+    var description_raw: String = "", //sudah
 
     @ColumnInfo(name = "favorited")
     var favorited: Boolean = false
