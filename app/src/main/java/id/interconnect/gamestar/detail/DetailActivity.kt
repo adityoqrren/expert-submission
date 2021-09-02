@@ -1,10 +1,8 @@
 package id.interconnect.gamestar.detail
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import id.interconnect.gamestar.R
 import id.interconnect.gamestar.core.data.Resource
@@ -29,28 +27,52 @@ class DetailActivity : AppCompatActivity() {
 
         detailViewModel.setDetailGameId(idGame)
         detailViewModel.detailGames.observe(this, { detailGame ->
-            if(detailGame != null){
-                when(detailGame){
-                    is Resource.Loading -> {
-                            supportActionBar?.title = ""
+            if (detailGame != null) {
+                when (detailGame) {
+                    is Resource.Loading<*> -> {
+                        supportActionBar?.title = ""
                     }
-                    is Resource.Success -> {
-                        if(detailGame.data!=null){
-                            supportActionBar?.title = detailGame.data.name_original
+                    is Resource.Success<*> -> {
+                        if (detailGame.data != null) {
+                            val detailGameData = detailGame.data
+                            supportActionBar?.title = detailGameData?.name_original
                             Glide.with(this)
-                                .load(detailGame.data.background_image)
+                                .load(detailGameData?.background_image)
                                 .into(detailBinding.ivDetailImage)
-                            detailBinding.detailContent.description.text = detailGame.data.description_raw
-                            detailBinding.detailContent.genre.text = detailGame.data.genres
-                            detailBinding.detailContent.developers.text = detailGame.data.developers
-                            detailBinding.detailContent.parentPlatforms.text = detailGame.data.parent_platforms
-                            detailBinding.detailContent.released.text = detailGame.data.released
-                            detailBinding.detailContent.updated.text = detailGame.data.updated
-                            detailBinding.detailContent.rating.text = detailGame.data.rating.toString()
-                            detailBinding.detailContent.playtime.text = " ${detailGame.data.playtime.toString()} hour"
-                            favorited = detailGame.data.favorited
-                            changeFavoriteIcon(detailGame.data.favorited)
-                            Log.d("Lihat det favorited: ","${detailGame.data.favorited}")
+                            detailBinding.detailContent.description.text =
+                                detailGameData?.description_raw
+                            detailBinding.detailContent.genre.text = detailGameData?.genres
+                            detailBinding.detailContent.developers.text = detailGameData?.developers
+                            detailBinding.detailContent.parentPlatforms.text =
+                                detailGameData?.parent_platforms
+                            detailBinding.detailContent.released.text = detailGameData?.released
+                            detailGameData?.updated?.let {
+                                detailBinding.detailContent.updated.text = it
+                            }
+                            detailBinding.detailContent.rating.text =
+                                detailGameData?.rating.toString()
+                            detailGameData?.playtime?.let {
+                                detailBinding.detailContent.playtime.text =
+                                    resources.getQuantityString(
+                                        R.plurals.detail_playtime_hour,
+                                        it,
+                                        it
+                                    )
+                            }
+                            detailBinding.detailContent.ageRating.text = detailGameData?.esrb_rating
+                            detailGameData?.tba?.let {
+                                if (it) {
+                                    detailBinding.detailContent.tba.text =
+                                        resources.getText(R.string.tba_yes)
+                                } else {
+                                    detailBinding.detailContent.tba.text =
+                                        resources.getText(R.string.tba_no)
+                                }
+                            }
+                            detailGameData?.favorited?.let {
+                                favorited = it
+                                changeFavoriteIcon(it)
+                            }
                             detailBinding.favoriteFab.setOnClickListener {
                                 indicatorChangeFav = true
                                 runBlocking {
@@ -59,10 +81,10 @@ class DetailActivity : AppCompatActivity() {
                             }
                         }
                     }
-                    is Resource.Error -> {
+                    is Resource.Error<*> -> {
                         Toast.makeText(
                             this,
-                            "Oops, error guys!",
+                            resources.getString(R.string.error_message),
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -73,9 +95,8 @@ class DetailActivity : AppCompatActivity() {
     }
 
 
-    private fun changeFavoriteIcon(favorited: Boolean){
+    private fun changeFavoriteIcon(favorited: Boolean) {
         if (favorited) {
-            Log.d("scope 1 det: ", favorited.toString())
             if (indicatorChangeFav) Toast.makeText(
                 this,
                 resources.getText(R.string.tambah_fav_game),
@@ -88,7 +109,6 @@ class DetailActivity : AppCompatActivity() {
                 resources.getText(R.string.hapus_fav_game),
                 Toast.LENGTH_SHORT
             ).show()
-            Log.d("scope 2 det: ", favorited.toString())
             detailBinding.favoriteFab.setImageResource(R.drawable.ic_favorite_white)
         }
         indicatorChangeFav = false

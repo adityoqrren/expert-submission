@@ -13,13 +13,12 @@ import id.interconnect.gamestar.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var fragmentMainBinding: ActivityMainBinding
+    private lateinit var fragmentMainBinding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fragmentMainBinding = ActivityMainBinding.inflate(layoutInflater)
-        //val toolbar: Toolbar = findViewById(R.id.toolbar)
         setContentView(fragmentMainBinding.root)
         setSupportActionBar(fragmentMainBinding.appBarMain.toolbar)
 
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.nav_home, R.id.nav_favorite),
+            setOf(R.id.nav_home, R.id.favoriteGraph),
             fragmentMainBinding.drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

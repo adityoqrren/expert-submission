@@ -1,5 +1,6 @@
 package id.interconnect.gamestar
 
+import android.annotation.SuppressLint
 import android.app.Application
 import id.interconnect.gamestar.core.di.databaseModule
 import id.interconnect.gamestar.core.di.networkModule
@@ -11,6 +12,7 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 
+@SuppressLint
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()

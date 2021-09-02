@@ -2,18 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@android:color/holo_purple"
+    android:background="@drawable/background_header_drawer"
     android:orientation="vertical"
     android:gravity="bottom"
     android:paddingStart="16dp"
+    android:paddingEnd="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
         android:layout_gravity="start"
-        android:textSize="20dp"
+        android:textSize="40sp"
         android:textColor="@color/white"
-        android:text="GAME STAR"/>
+        android:text="@string/main_title_drawer"/>
 
 </LinearLayout>

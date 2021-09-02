@@ -1,9 +1,7 @@
 <resources>
+    <string name="title_favorite">Favorite</string>
     <string name="app_name">GameStar</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_home">Home</string>
-    <string name="fragment_favorite">Favorite</string>
     <string name="image_description">Image of game</string>
     <string name="menu_favorite_desc">Favorite button</string>
     <string name="example_lorem">
@@ -11,4 +9,33 @@
     </string>
     <string name="tambah_fav_game">Game added to favorite</string>
     <string name="hapus_fav_game">Game removed from favorite</string>
+    <plurals name="detail_playtime_hour">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <string name="error_message">Oops! There is something wrong with our server. Try it later!</string>
+    <string name="genre_text">Genre</string>
+    <string name="genre_template">Action, Arcade, Fun</string>
+    <string name="developers_text">Developers</string>
+    <string name="developers_template">Company 1, Company 2, Company 3</string>
+    <string name="platforms_text">Platforms</string>
+    <string name="platforms_template">Platform 1, platform2, platform 3</string>
+    <string name="released_text">Released</string>
+    <string name="released_template">0000–00–00</string>
+    <string name="updated_text">Updated</string>
+    <string name="updated_template">0000–00–00\n00:00:00</string>
+    <string name="rating_text">Rating</string>
+    <string name="rating_template">5.0</string>
+    <string name="average_playtime_text">Average Playtime</string>
+    <string name="average_playtime_template">x hour</string>
+    <string name="tba_text">TBA</string>
+    <string name="tba_no">No</string>
+    <string name="tba_yes">Yes</string>
+    <string name="age_rating_text">Age Rating</string>
+    <string name="age_rating_template">-</string>
+    <string name="description_text">Description</string>
+    <string name="main_title_drawer">GameStar</string>
+    <string name="loading_text_waiting">please waiting, your favorites will be here</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
 </resources>

@@ -1,3 +1,4 @@
 rootProject.name = "GameStar"
 include ':app'
 include ':core'
+include ':Favorite'
