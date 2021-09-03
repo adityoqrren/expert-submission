@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/content_description"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_separator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/separator"
+            app:layout_constraintBottom_toBottomOf="@+id/item_rating_text"
+            app:layout_constraintStart_toEndOf="@+id/item_rating_text"
+            app:layout_constraintTop_toTopOf="@+id/item_rating_text"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/title_display_text"
+            android:textColor="@color/black_gray"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_image"
+            app:layout_constraintTop_toTopOf="@+id/item_image" />
+
+        <TextView
+            android:id="@+id/item_rating_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/rating_text"
+            app:layout_constraintStart_toStartOf="@+id/item_title"
+            app:layout_constraintTop_toBottomOf="@+id/item_title" />
+
+        <TextView
+            android:id="@+id/item_platform_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/platform_text"
+            app:layout_constraintStart_toStartOf="@+id/item_rating_text"
+            app:layout_constraintTop_toBottomOf="@+id/item_rating_text" />
+
+        <TextView
+            android:id="@+id/item_separator_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/separator"
+            app:layout_constraintBottom_toBottomOf="@+id/item_platform_text"
+            app:layout_constraintEnd_toEndOf="@+id/item_separator"
+            app:layout_constraintStart_toStartOf="@+id/item_separator"
+            app:layout_constraintTop_toTopOf="@+id/item_platform_text"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/item_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/rating_template"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/item_separator"
+            app:layout_constraintStart_toEndOf="@+id/item_separator"
+            app:layout_constraintTop_toTopOf="@+id/item_separator" />
+
+        <TextView
+            android:id="@+id/item_platform"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/platform_template"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/item_title"
+            app:layout_constraintStart_toStartOf="@+id/item_rating"
+            app:layout_constraintTop_toTopOf="@+id/item_platform_text"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

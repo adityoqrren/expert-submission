@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_display_text">Title display</string>
+    <string name="rating_text">Rating </string>
+    <string name="platform_text">Platform</string>
+    <string name="rating_template">5.0</string>
+    <string name="platform_template">Windows, Android, iOS, Max OS</string>
+    <string name="content_description">image of game in list</string>
+    <string name="separator">:</string>
+</resources>
