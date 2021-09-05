@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_gamestar_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GameStar">
-        <activity android:name=".SplashScreen" android:theme="@style/SplashScreenStyle">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/SplashScreenStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,8 +26,7 @@
             android:theme="@style/Theme.GameStar.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.GameStar.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.GameStar.NoActionBar"/>
     </application>
 
 </manifest>
