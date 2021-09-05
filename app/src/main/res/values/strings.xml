@@ -1,5 +1,4 @@
 <resources>
-    <string name="title_favorite">Favorite</string>
     <string name="app_name">GameStar</string>
     <string name="fragment_home">Home</string>
     <string name="image_description">Image of game</string>

@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<GameDatabase>().gameDao() }
     single {
+        //sqlite encryption
         val passphrase:ByteArray = SQLiteDatabase.getBytes("mygamestarryeahh".toCharArray())
         val factory = SupportFactory(passphrase)
 
@@ -46,7 +47,8 @@ val networkModule = module {
         }else{
             logging.setLevel(HttpLoggingInterceptor.Level.BASIC)
         }
-        
+
+        //certificate pinning
         val hostname = "api.rawg.io"
         val certificatePinner = CertificatePinner.Builder()
             .add(hostname, "sha256/RI9CUmPUOpUk2vdVMSZDWj+wtoQO5k9MSCSM9w4grmU=")
